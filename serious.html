@@ -109,7 +109,7 @@
 
 <footer>
   SEC_QUOTES · 資安語錄產生器 · 真實名言收錄 <span id="count"></span> 則 ·
-  <a href="meme.html">切換 meme 語錄版 →</a> · <a href="index.html">首頁</a>
+  <a href="meme.html">切換 meme 語錄版 →</a> · <a href="index.html">首頁</a> · <a href="https://sectools.tw/tools" target="_blank" rel="noopener">資安工具箱</a>
 </footer>
 
 <div class="toast" id="toast"></div>
@@ -179,8 +179,8 @@ function drawCard(q){
   x.font="26px monospace"; x.fillStyle=dim; x.fillText("root@sec-quotes:~$ ./quote --card", 60, 90);
   // wrap quote
   x.fillStyle=fg; x.font="bold 46px monospace";
-  const words=q.t.split(" "); let line="", lines=[], maxW=W-140;
-  for(const w of words){ const test=line?line+" "+w:w; if(x.measureText(test).width>maxW){lines.push(line);line=w;} else line=test; }
+  const words=q.t.split(""); let line="", lines=[], maxW=W-140; // 逐字排版，中英皆可
+  for(const w of words){ const test=line+w; if(x.measureText(test).width>maxW){lines.push(line);line=w;} else line=test; }
   if(line)lines.push(line);
   let ly=200+(4-Math.min(lines.length,5))*22;
   lines.slice(0,6).forEach(l=>{ x.fillText(l,70,ly); ly+=64; });
