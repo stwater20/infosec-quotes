@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>資安語錄產生器 · SEC_QUOTES</title>
+<meta name="description" content="資安語錄產生器 — 正經名言與 meme 語錄兩種版本。駭客終端機風,暖灰紙張配色。">
+<style>
+  :root{ --bg:#f4f1ea; --fg:#3a3532; --dim:#8a8175; --accent:#8a5a2b; --card:#fbf9f3; --border:#ddd6c8; }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    background:var(--bg); color:var(--fg);
+    font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+    display:flex; flex-direction:column; min-height:100vh; line-height:1.6;
+    align-items:center; justify-content:center; padding:24px;
+  }
+  body::before{ content:""; position:fixed; inset:0; pointer-events:none;
+    background:repeating-linear-gradient(0deg,rgba(0,0,0,.05) 0 1px,transparent 1px 4px); opacity:.5; }
+  .wrap{width:100%; max-width:720px; position:relative; z-index:1}
+  h1{font-size:clamp(22px,4vw,32px); margin:0 0 4px; letter-spacing:1px}
+  .cursor{animation:blink 1s steps(1) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .sub{color:var(--dim); font-size:14px; margin-bottom:28px}
+  .cards{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+  @media(max-width:560px){ .cards{grid-template-columns:1fr} }
+  a.card{
+    display:block; text-decoration:none; color:inherit; background:var(--card);
+    border:1px solid var(--border); border-radius:10px; padding:22px 22px 24px; transition:.15s;
+  }
+  a.card:hover{ transform:translateY(-3px); border-color:var(--accent); box-shadow:0 6px 20px rgba(0,0,0,.06); }
+  .tag{color:var(--accent); font-size:12px; letter-spacing:1px}
+  .card h2{margin:6px 0 8px; font-size:20px}
+  .card p{margin:0; color:var(--dim); font-size:13px}
+  .go{margin-top:16px; color:var(--accent); font-size:13px}
+  footer{margin-top:28px; color:var(--dim); font-size:12px; text-align:center}
+  footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>root@sec-quotes:~$ <span class="cursor">█</span></h1>
+  <div class="sub">資安語錄產生器 · 挑一個版本開始</div>
+  <div class="cards">
+    <a class="card" href="serious.html">
+      <div class="tag"># 正經版</div>
+      <h2>資安名言</h2>
+      <p>收錄業界真實名言與通用箴言,適合簡報開場、社群貼文、每日提醒。</p>
+      <div class="go">進入 SEC_QUOTES →</div>
+    </a>
+    <a class="card" href="meme.html">
+      <div class="tag"># meme 語錄版</div>
+      <h2>資安 meme 語錄</h2>
+      <p>值班室的黑色幽默,笑的是處境不是人。純屬娛樂,請勿當真。</p>
+      <div class="go">進入 SEC_MEME →</div>
+    </a>
+  </div>
+  <footer>
+    每站皆含:隨機語錄 · 每日一句 · 一鍵複製 · 分享 · 圖卡下載 · 主題切換<br>
+    想貢獻語錄?編輯對應的 <code>quotes.json</code> 發 PR 即可 ·
+    <a href="https://github.com" id="repoLink">原始碼</a>
+  </footer>
+</div>
+</body>
+</html>
