@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stwater20.github.io/infosec-quotes/sitemap.xml
